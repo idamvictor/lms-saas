@@ -16,6 +16,7 @@
   "dependencies": {
     "@ai-sdk/openai": "3.0.0-beta.76",
     "@ai-sdk/react": "3.0.0-beta.128",
+    "@base-ui/react": "^1.4.1",
     "@clerk/nextjs": "^6.35.5",
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
@@ -73,7 +74,7 @@
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
     "baseline-browser-mapping": "^2.10.25",
-    "shadcn": "^3.5.0",
+    "shadcn": "^4.6.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.4.0",
     "typescript": "^5"
