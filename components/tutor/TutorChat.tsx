@@ -8,7 +8,7 @@ import { TutorMessages } from "./TutorMessages";
 export function TutorChat() {
   const [inputValue, setInputValue] = useState("");
 
-  const { messages, sendMessage, status } = useChat({
+  const { messages, sendMessage, status, error } = useChat({
     messages: [
       {
         id: "welcome",
@@ -100,6 +100,11 @@ export function TutorChat() {
             )}
           </button>
         </form>
+        {error && (
+          <p className="mt-2 text-sm text-red-400 text-center">
+            Error: {error.message}
+          </p>
+        )}
         <p className="mt-3 text-sm text-slate-500 text-center">
           Powered by AI • Ultra exclusive feature
         </p>
