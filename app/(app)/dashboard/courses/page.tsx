@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { CourseCard } from "@/components/courses";
 import { sanityFetch } from "@/sanity/lib/live";
 import { DASHBOARD_COURSES_QUERY } from "@/sanity/lib/queries";
+import { DASHBOARD_COURSES_QUERYResult } from "@/sanity.types";
 
 export default async function MyCoursesPage() {
   const user = await currentUser();
@@ -19,17 +20,19 @@ export default async function MyCoursesPage() {
   });
 
   // Calculate completion for each course and filter to started ones
-  type Course = (typeof courses)[number];
+  type Course = DASHBOARD_COURSES_QUERYResult[number];
+  type Module = NonNullable<Course["modules"]>[number];
+  type Lesson = NonNullable<Module["lessons"]>[number];
   type CourseWithProgress = Course & {
     totalLessons: number;
     completedLessons: number;
   };
 
-  const startedCourses = courses.reduce<CourseWithProgress[]>((acc, course) => {
+  const startedCourses = (courses || []).reduce((acc: CourseWithProgress[], course: Course) => {
     const { total, completed } = (course.modules ?? []).reduce(
-      (stats, m) =>
+      (stats: { total: number; completed: number }, m: Module) =>
         (m.lessons ?? []).reduce(
-          (s, l) => ({
+          (s: { total: number; completed: number }, l: Lesson) => ({
             total: s.total + 1,
             completed: s.completed + (l.completedBy?.includes(user.id) ? 1 : 0),
           }),
@@ -39,10 +42,14 @@ export default async function MyCoursesPage() {
     );
 
     if (completed > 0) {
-      acc.push({ ...course, totalLessons: total, completedLessons: completed });
+      acc.push({
+        ...course,
+        totalLessons: total,
+        completedLessons: completed,
+      });
     }
     return acc;
-  }, []);
+  }, [] as CourseWithProgress[]);
 
   return (
     <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
@@ -81,7 +88,7 @@ export default async function MyCoursesPage() {
 
         {startedCourses.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {startedCourses.map((course) => (
+            {startedCourses.map((course: CourseWithProgress) => (
               <CourseCard
                 key={course.slug!.current!}
                 slug={{ current: course.slug!.current! }}

@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { sanityFetch } from "@/sanity/lib/live";
 import { FEATURED_COURSES_QUERY, STATS_QUERY } from "@/sanity/lib/queries";
+import type { FEATURED_COURSES_QUERYResult } from "@/sanity.types";
 import { currentUser } from "@clerk/nextjs/server";
 
 export default async function Home() {
@@ -278,7 +279,7 @@ export default async function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {courses.map((course) => (
+            {(courses as FEATURED_COURSES_QUERYResult).map((course) => (
               <CourseCard
                 key={course.slug!.current!}
                 slug={{ current: course.slug!.current! }}
