@@ -9,6 +9,7 @@ import { MuxVideoPlayer } from "./MuxVideoPlayer";
 import { LessonContent } from "./LessonContent";
 import { LessonCompleteButton } from "./LessonCompleteButton";
 import { LessonSidebar } from "./LessonSidebar";
+import { TranscriptPanel } from "./TranscriptPanel";
 import type { LESSON_BY_ID_QUERYResult } from "@/sanity.types";
 
 interface LessonPageContentProps {
@@ -67,6 +68,20 @@ export function LessonPageContent({ lesson, userId }: LessonPageContentProps) {
         : null;
   }
 
+  // Extract subtitle track from the lesson video data
+  // Note: tracks field is added to GROQ query but may not be in generated types
+  interface MuxTextTrack {
+    type?: string;
+    language_code?: string;
+    id?: string;
+  }
+  const videoAsset = lesson.video?.asset as any;
+  const tracks = (videoAsset?.data?.tracks ?? []) as MuxTextTrack[];
+  const subtitleTrackId = tracks.find(
+    (t) => t.type === "text" && t.language_code === "en"
+  )?.id ?? null;
+  const assetId = videoAsset?.assetId ?? null;
+
   return (
     <div className="flex flex-col lg:flex-row gap-8">
       {/* Sidebar */}
@@ -90,6 +105,15 @@ export function LessonPageContent({ lesson, userId }: LessonPageContentProps) {
                 playbackId={lesson.video?.asset?.playbackId}
                 title={lesson.title ?? undefined}
                 className="mb-6"
+              />
+            )}
+
+            {/* Transcript Panel */}
+            {lesson.video?.asset?.playbackId && (
+              <TranscriptPanel
+                playbackId={lesson.video.asset.playbackId}
+                trackId={subtitleTrackId}
+                assetId={assetId}
               />
             )}
 

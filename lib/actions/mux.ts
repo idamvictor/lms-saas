@@ -249,3 +249,166 @@ export async function getMuxSignedToken(
     debug: result.debug,
   };
 }
+
+interface MuxTranscriptResult {
+  transcript: string | null;
+  error?: string;
+}
+
+function parseVttToPlainText(vttContent: string): string {
+  const lines = vttContent.split("\n");
+  const textLines: string[] = [];
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    // Skip empty lines, WEBVTT header, cue identifiers (numbers), and timestamps
+    if (
+      !trimmed ||
+      trimmed === "WEBVTT" ||
+      /^\d+$/.test(trimmed) ||
+      trimmed.includes("-->")
+    ) {
+      continue;
+    }
+
+    // Skip NOTE lines (MUX metadata)
+    if (trimmed.startsWith("NOTE")) {
+      continue;
+    }
+
+    textLines.push(trimmed);
+  }
+
+  // Join lines with space, collapse whitespace, and deduplicate consecutive repeated phrases
+  let transcript = textLines.join(" ").replace(/\s+/g, " ").trim();
+
+  // Simple deduplication of consecutive repeated phrases
+  // Replace patterns like "word word" with just "word" for common repeating patterns
+  transcript = transcript.replace(/\b(\w+)\s+\1\b/g, "$1");
+
+  return transcript;
+}
+
+export async function getMuxTranscript(
+  playbackId: string,
+  trackId: string | null | undefined,
+  assetId?: string | null
+): Promise<MuxTranscriptResult> {
+  const signingKey = process.env.MUX_SIGNING_KEY;
+  const signingKeyId = process.env.MUX_SIGNING_KEY_ID;
+
+  // Guard: check required credentials
+  if (!signingKey || !signingKeyId) {
+    return {
+      transcript: null,
+      error: "Mux signing keys are not configured",
+    };
+  }
+
+  if (!playbackId) {
+    return {
+      transcript: null,
+      error: "playbackId is required",
+    };
+  }
+
+  let resolvedTrackId = trackId;
+
+  // If no trackId provided, fall back to fetching from MUX API
+  if (!resolvedTrackId && assetId) {
+    try {
+      if (!process.env.MUX_TOKEN_ID || !process.env.MUX_TOKEN_SECRET) {
+        return {
+          transcript: null,
+          error: "Mux API credentials are not configured",
+        };
+      }
+
+      const tracks = await (mux.video.assets as any).tracks.list(assetId);
+      const subtitleTrack = tracks.find(
+        (track: { type: string; text_type?: string; language_code?: string }) =>
+          track.type === "text" &&
+          track.text_type === "subtitles" &&
+          track.language_code === "en"
+      );
+
+      if (!subtitleTrack) {
+        return {
+          transcript: null,
+          error: "No English subtitle track found for this video",
+        };
+      }
+
+      resolvedTrackId = subtitleTrack.id;
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "Failed to fetch track information";
+      return {
+        transcript: null,
+        error: errorMessage,
+      };
+    }
+  }
+
+  if (!resolvedTrackId) {
+    return {
+      transcript: null,
+      error: "No subtitle track found for this video",
+    };
+  }
+
+  try {
+    // Generate signed playback token (same as for video playback)
+    const expirationTime = Math.floor(Date.now() / 1000) + 3600; // 1 hour from now
+    const formattedKey = formatSigningKey(signingKey);
+
+    const playbackToken = jwt.sign(
+      {
+        sub: playbackId,
+        exp: expirationTime,
+        kid: signingKeyId,
+        aud: "v",
+      },
+      formattedKey,
+      { algorithm: "RS256" }
+    );
+
+    // Fetch the VTT file
+    const vttUrl = `https://stream.mux.com/${playbackId}/text/${resolvedTrackId}.vtt?token=${playbackToken}`;
+    const response = await fetch(vttUrl);
+
+    if (!response.ok) {
+      return {
+        transcript: null,
+        error: `Failed to fetch transcript (${response.status})`,
+      };
+    }
+
+    const vttContent = await response.text();
+    const cleanTranscript = parseVttToPlainText(vttContent);
+
+    if (!cleanTranscript) {
+      return {
+        transcript: null,
+        error: "No transcript content found",
+      };
+    }
+
+    return {
+      transcript: cleanTranscript,
+    };
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : "Failed to fetch transcript";
+
+    return {
+      transcript: null,
+      error: errorMessage,
+    };
+  }
+}

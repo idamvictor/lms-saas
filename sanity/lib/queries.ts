@@ -191,10 +191,17 @@ export const LESSON_BY_ID_QUERY = defineQuery(`*[
   description,
   video {
     asset-> {
+      assetId,
       playbackId,
       status,
       data {
-        duration
+        duration,
+        tracks[] {
+          id,
+          type,
+          text_type,
+          language_code
+        }
       }
     }
   },
@@ -230,10 +237,17 @@ export const LESSON_BY_SLUG_QUERY = defineQuery(`*[
   description,
   video {
     asset-> {
+      assetId,
       playbackId,
       status,
       data {
-        duration
+        duration,
+        tracks[] {
+          id,
+          type,
+          text_type,
+          language_code
+        }
       }
     }
   },
