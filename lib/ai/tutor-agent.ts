@@ -3,7 +3,7 @@ import { ToolLoopAgent } from "ai";
 import { searchCoursesTool } from "./tools/search-courses";
 
 export const tutorAgent = new ToolLoopAgent({
-  model: openai("gpt-4o"),
+  model: openai("gpt-4o") as any,
   instructions: `You are a knowledgeable learning assistant for Sonny's Academy. You help Ultra members by:
 1. Finding relevant courses, modules, and lessons
 2. Answering questions based on our lesson content
