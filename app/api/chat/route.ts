@@ -17,7 +17,7 @@ export async function POST(request: Request) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   return createAgentUIStreamResponse({
-    agent: tutorAgent,
-    messages,
+    agent: tutorAgent as any,
+    uiMessages: messages,
   });
 }
