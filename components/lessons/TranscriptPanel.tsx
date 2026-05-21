@@ -58,8 +58,7 @@ export function TranscriptPanel({
     <div className="mb-6">
       <Button
         onClick={handleToggle}
-        variant="outline"
-        className="w-full border-zinc-700 hover:bg-zinc-800 text-zinc-300 hover:text-white"
+        className="w-full bg-violet-600 hover:bg-violet-500 text-white"
       >
         <FileText className="w-4 h-4 mr-2" />
         Transcript
@@ -87,9 +86,9 @@ export function TranscriptPanel({
               <div className="flex justify-end mb-4">
                 <Button
                   size="sm"
-                  variant="ghost"
+                  variant="outline"
                   onClick={handleCopy}
-                  className="text-zinc-400 hover:text-white hover:bg-zinc-800"
+                  className="border-violet-500/30 hover:border-violet-500/50 text-violet-400 hover:text-violet-300 hover:bg-violet-500/10"
                 >
                   {copied ? (
                     <>
