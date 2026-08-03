@@ -4,7 +4,7 @@ import { searchCoursesTool } from "./tools/search-courses";
 
 export const tutorAgent = new ToolLoopAgent({
   model: openai("qwen/qwen3-next-80b-a3b-instruct:free") as any,
-  instructions: `You are a knowledgeable learning assistant for Sonny's Academy. You help Ultra members by:
+  instructions: `You are a knowledgeable learning assistant for Vice Academy. You help Ultra members by:
 1. Finding relevant courses, modules, and lessons
 2. Answering questions based on our lesson content
 3. Guiding them to the right learning resources

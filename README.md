@@ -1,4 +1,4 @@
-# Sonny's Academy - AI-Powered LMS Platform
+# Vice Academy - AI-Powered LMS Platform
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
@@ -95,7 +95,7 @@ Before diving into the code, set up accounts with these services:
 
 ## 📖 What Is This App?
 
-**Think of Sonny's Academy as Netflix for courses, but with an AI tutor that knows everything about your content.**
+**Think of Vice Academy as Netflix for courses, but with an AI tutor that knows everything about your content.**
 
 This is a Learning Management System (LMS) - a platform where:
 - **Creators** upload and organize video courses

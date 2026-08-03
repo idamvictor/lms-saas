@@ -220,7 +220,7 @@ function Logo() {
       </div>
       <div className="flex flex-col">
         <span className="font-bold text-lg tracking-tight leading-none">
-          SONNY
+          VICE
         </span>
         <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-500">
           Academy

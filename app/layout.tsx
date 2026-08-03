@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sonny's Academy | Learn to Code",
+  title: "Vice Academy | Learn to Code",
   description:
     "Master coding the modern way with expertly crafted courses, modules, and hands-on lessons.",
 };
