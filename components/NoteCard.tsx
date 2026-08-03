@@ -243,7 +243,10 @@ export function NoteCard({ documentId }: NoteCardProps) {
         placeholder="Enter content..."
       />
       <p className="text-xs text-muted-foreground">
-        Created: {new Date(note._createdAt).toLocaleString()}
+        Created:{" "}
+        {new Date(note._createdAt).toLocaleString("en-US", {
+          timeZone: "UTC",
+        })}
       </p>
     </div>
   );
