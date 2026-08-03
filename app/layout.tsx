@@ -30,6 +30,7 @@ export default function RootLayout({
     <html lang="en" className={cn("font-sans", roboto.variable)}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         {children}
       </body>
