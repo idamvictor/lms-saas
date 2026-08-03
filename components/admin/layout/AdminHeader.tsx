@@ -47,7 +47,7 @@ function AdminHeader() {
           href="/admin"
           className="flex items-center gap-2.5 font-semibold lg:mr-8"
         >
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-600 shadow-lg shadow-violet-500/20">
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/20">
             <Code2 className="h-4 w-4 text-white" />
           </div>
           <span className="text-lg text-white hidden sm:inline">Admin</span>
@@ -65,7 +65,7 @@ function AdminHeader() {
                 className={cn(
                   "flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-colors",
                   active
-                    ? "bg-violet-500/20 text-violet-300"
+                    ? "bg-emerald-500/20 text-emerald-300"
                     : "text-zinc-400 hover:text-white hover:bg-zinc-800/50",
                 )}
               >
@@ -116,7 +116,7 @@ function AdminHeader() {
                     className={cn(
                       "flex items-center gap-2 cursor-pointer",
                       active
-                        ? "text-violet-300 bg-violet-500/10"
+                        ? "text-emerald-300 bg-emerald-500/10"
                         : "text-zinc-300",
                     )}
                   >

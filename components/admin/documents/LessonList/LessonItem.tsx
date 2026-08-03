@@ -83,7 +83,7 @@ export function LessonItem({
             {hasSlug && (
               <Badge
                 variant="secondary"
-                className="bg-violet-500/10 text-violet-400 border-violet-500/30 text-xs px-1.5 py-0"
+                className="bg-emerald-500/10 text-emerald-400 border-emerald-500/30 text-xs px-1.5 py-0"
               >
                 <Link2 className="h-3 w-3" />
               </Badge>

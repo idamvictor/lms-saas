@@ -67,7 +67,7 @@ export function SortableReferenceItem({
       </button>
       <Link
         href={editUrl}
-        className="text-sm text-zinc-300 flex-1 hover:text-violet-400 hover:underline transition-colors flex items-center gap-2"
+        className="text-sm text-zinc-300 flex-1 hover:text-emerald-400 hover:underline transition-colors flex items-center gap-2"
       >
         {title}
         <ExternalLink className="h-3 w-3 opacity-50" />

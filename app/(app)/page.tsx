@@ -35,9 +35,9 @@ export default async function Home() {
     <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
       {/* Animated gradient mesh background */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-violet-600/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-emerald-600/20 rounded-full blur-[120px] animate-pulse" />
         <div
-          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-fuchsia-600/15 rounded-full blur-[100px] animate-pulse"
+          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-teal-600/15 rounded-full blur-[100px] animate-pulse"
           style={{ animationDelay: "1s" }}
         />
         <div
@@ -63,11 +63,11 @@ export default async function Home() {
           <div className="flex flex-col items-center text-center">
             {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-8 animate-fade-in"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-8 animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
-              <Sparkles className="w-4 h-4 text-violet-400" />
-              <span className="text-sm text-violet-300">
+              <Sparkles className="w-4 h-4 text-emerald-400" />
+              <span className="text-sm text-emerald-300">
                 Learn to code with real-world projects
               </span>
             </div>
@@ -78,7 +78,7 @@ export default async function Home() {
               style={{ animationDelay: "0.2s" }}
             >
               <span className="block text-white">Master coding</span>
-              <span className="block bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
                 the modern way
               </span>
             </h1>
@@ -90,7 +90,7 @@ export default async function Home() {
             >
               Join Vice Academy and learn from expertly crafted courses,
               modules, and hands-on lessons. From free fundamentals to{" "}
-              <span className="text-fuchsia-400">Pro exclusives</span> and{" "}
+              <span className="text-teal-400">Pro exclusives</span> and{" "}
               <span className="text-cyan-400">Ultra gems</span>.
             </p>
 
@@ -104,7 +104,7 @@ export default async function Home() {
                   <Link href="/dashboard">
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8 h-12 text-base font-semibold"
+                      className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white border-0 shadow-xl shadow-emerald-600/30 px-8 h-12 text-base font-semibold"
                     >
                       <LayoutDashboard className="w-4 h-4 mr-2" />
                       Go to Dashboard
@@ -126,7 +126,7 @@ export default async function Home() {
                   <Link href="/pricing">
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8 h-12 text-base font-semibold"
+                      className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white border-0 shadow-xl shadow-emerald-600/30 px-8 h-12 text-base font-semibold"
                     >
                       <Play className="w-4 h-4 mr-2 fill-white" />
                       Start Learning Free
@@ -166,7 +166,7 @@ export default async function Home() {
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col items-center">
                   <div className="flex items-center gap-2 mb-1">
-                    <stat.icon className="w-4 h-4 text-violet-400" />
+                    <stat.icon className="w-4 h-4 text-emerald-400" />
                     <span className="text-2xl md:text-3xl font-bold text-white">
                       {stat.value}
                     </span>
@@ -199,10 +199,10 @@ export default async function Home() {
               {
                 tier: "Pro",
                 icon: Crown,
-                color: "violet",
-                gradient: "from-violet-500 to-fuchsia-600",
-                bgGlow: "bg-violet-500/10",
-                borderColor: "border-violet-500/30",
+                color: "emerald",
+                gradient: "from-emerald-500 to-teal-600",
+                bgGlow: "bg-emerald-500/10",
+                borderColor: "border-emerald-500/30",
                 description: "Level up with advanced, production-ready content",
                 features: [
                   "All Free content",
@@ -231,10 +231,10 @@ export default async function Home() {
             ].map((plan) => (
               <div
                 key={plan.tier}
-                className={`relative p-8 rounded-2xl ${plan.bgGlow} border ${plan.borderColor} ${plan.popular ? "ring-2 ring-violet-500/50" : ""} transition-all duration-300 hover:scale-[1.02]`}
+                className={`relative p-8 rounded-2xl ${plan.bgGlow} border ${plan.borderColor} ${plan.popular ? "ring-2 ring-emerald-500/50" : ""} transition-all duration-300 hover:scale-[1.02]`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-xs font-semibold">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-xs font-semibold">
                     Most Popular
                   </div>
                 )}
@@ -252,7 +252,7 @@ export default async function Home() {
                       className="flex items-center gap-2 text-sm text-zinc-300"
                     >
                       <CheckCircle2
-                        className={`w-4 h-4 ${plan.color === "emerald" ? "text-emerald-400" : plan.color === "violet" ? "text-violet-400" : "text-cyan-400"}`}
+                        className={`w-4 h-4 ${plan.color === "emerald" ? "text-emerald-400" : plan.color === "emerald" ? "text-emerald-400" : "text-cyan-400"}`}
                       />
                       {feature}
                     </li>
@@ -268,7 +268,7 @@ export default async function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Courses built for{" "}
-              <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 real results
               </span>
             </h2>
@@ -314,7 +314,7 @@ export default async function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Students{" "}
-              <span className="bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
                 love it
               </span>
             </h2>
@@ -375,12 +375,12 @@ export default async function Home() {
 
         {/* CTA Section */}
         <section className="px-6 lg:px-12 py-20 max-w-7xl mx-auto">
-          <div className="relative rounded-3xl bg-gradient-to-br from-violet-600/20 via-fuchsia-600/10 to-cyan-600/20 border border-white/10 p-12 md:p-20 text-center overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-emerald-600/20 via-teal-600/10 to-cyan-600/20 border border-white/10 p-12 md:p-20 text-center overflow-hidden">
             {/* Animated gradient border */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-violet-500/20 via-fuchsia-500/20 to-cyan-500/20 blur-xl" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-cyan-500/20 blur-xl" />
 
             <div className="relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-violet-500/30">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-emerald-500/30">
                 <Rocket className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -393,7 +393,7 @@ export default async function Home() {
               <Link href="/pricing">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-10 h-14 text-lg font-semibold"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white border-0 shadow-xl shadow-emerald-600/30 px-10 h-14 text-lg font-semibold"
                 >
                   View Pricing
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -407,7 +407,7 @@ export default async function Home() {
         <footer className="px-6 lg:px-12 py-12 border-t border-zinc-800/50 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
                 <Code2 className="w-4 h-4 text-white" />
               </div>
               <span className="font-bold">Vice Academy</span>

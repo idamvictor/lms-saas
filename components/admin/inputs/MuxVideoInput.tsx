@@ -352,7 +352,7 @@ function MuxVideoInputField({ path, label, ...handle }: MuxVideoInputProps) {
         <Label className="text-zinc-300">{label}</Label>
         <div className="rounded-lg border border-zinc-700 bg-zinc-800/30 p-6">
           <div className="flex flex-col items-center justify-center text-center">
-            <Loader2 className="h-10 w-10 animate-spin text-violet-500 mb-3" />
+            <Loader2 className="h-10 w-10 animate-spin text-emerald-500 mb-3" />
             <p className="font-medium text-white">Processing video...</p>
             <p className="text-sm text-zinc-500 mt-1">
               This may take a few minutes

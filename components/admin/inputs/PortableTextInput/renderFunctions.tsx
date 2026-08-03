@@ -44,7 +44,7 @@ export const renderStyle: RenderStyleFunction = (props) => {
   }
   if (style === "blockquote") {
     return (
-      <blockquote className="border-l-4 border-violet-500 pl-4 my-4 italic text-zinc-400">
+      <blockquote className="border-l-4 border-emerald-500 pl-4 my-4 italic text-zinc-400">
         {props.children}
       </blockquote>
     );
@@ -76,7 +76,7 @@ export const renderDecorator: RenderDecoratorFunction = (props) => {
   }
   if (decorator === "code") {
     return (
-      <code className="bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-violet-300 font-mono">
+      <code className="bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-emerald-300 font-mono">
         {props.children}
       </code>
     );
@@ -96,7 +96,7 @@ export const renderAnnotation: RenderAnnotationFunction = (props) => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors cursor-pointer"
+        className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition-colors cursor-pointer"
       >
         {props.children}
       </a>

@@ -63,7 +63,7 @@ function SelectInputField({
               <RadioGroupItem
                 value={option.value}
                 id={`${path}-${option.value}`}
-                className="border-zinc-600 text-violet-500"
+                className="border-zinc-600 text-emerald-500"
               />
               <Label
                 htmlFor={`${path}-${option.value}`}

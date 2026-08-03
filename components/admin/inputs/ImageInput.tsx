@@ -152,7 +152,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
 
             {isUploading && (
               <div className="absolute inset-0 bg-black/70 rounded-lg flex items-center justify-center">
-                <Loader2 className="h-8 w-8 animate-spin text-violet-500" />
+                <Loader2 className="h-8 w-8 animate-spin text-emerald-500" />
               </div>
             )}
           </div>
@@ -165,7 +165,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
           >
             {isUploading ? (
               <>
-                <Loader2 className="h-10 w-10 mb-2 animate-spin text-violet-500" />
+                <Loader2 className="h-10 w-10 mb-2 animate-spin text-emerald-500" />
                 <p className="text-sm">Uploading...</p>
               </>
             ) : (

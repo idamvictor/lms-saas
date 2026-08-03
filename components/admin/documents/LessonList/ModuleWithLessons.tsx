@@ -39,9 +39,9 @@ export function ModuleWithLessons({
       value={documentId}
       className="border-l-2 border-zinc-700 pl-4 ml-2"
     >
-      <AccordionTrigger className="py-2 hover:no-underline transition-colors data-[state=open]:text-violet-400">
+      <AccordionTrigger className="py-2 hover:no-underline transition-colors data-[state=open]:text-emerald-400">
         <div className="flex items-center gap-2">
-          <Layers className="h-4 w-4 text-violet-400" />
+          <Layers className="h-4 w-4 text-emerald-400" />
           <span className="font-medium text-sm text-zinc-300">
             {module?.title || "Untitled Module"}
           </span>

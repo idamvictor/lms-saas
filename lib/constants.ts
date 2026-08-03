@@ -6,16 +6,16 @@ export const TIER_OPTIONS = [
 
 export type Tier = (typeof TIER_OPTIONS)[number]["value"];
 
-type TierColor = "emerald" | "violet" | "cyan";
+type TierColor = "emerald" | "amber" | "cyan";
 
 const TIER_COLOR_MAP: Record<TierColor, { border: string; text: string }> = {
   emerald: {
     border: "border-emerald-500/20",
     text: "text-emerald-400",
   },
-  violet: {
-    border: "border-violet-500/30",
-    text: "text-violet-400",
+  amber: {
+    border: "border-amber-500/30",
+    text: "text-amber-400",
   },
   cyan: {
     border: "border-cyan-500/20",
@@ -44,10 +44,10 @@ export const TIER_STYLES: Record<
     badge: "bg-emerald-500/90 text-white",
   },
   pro: {
-    gradient: "from-violet-500 to-fuchsia-600",
-    border: "border-violet-500/30",
-    text: "text-violet-400",
-    badge: "bg-violet-500/90 text-white",
+    gradient: "from-amber-500 to-orange-600",
+    border: "border-amber-500/30",
+    text: "text-amber-400",
+    badge: "bg-amber-500/90 text-white",
   },
   ultra: {
     gradient: "from-cyan-400 to-blue-600",
@@ -70,7 +70,7 @@ export const TIER_FEATURES = [
   },
   {
     tier: "Pro",
-    color: "violet",
+    color: "amber",
     features: [
       "Everything in Free",
       "All Pro-tier courses",

@@ -94,7 +94,7 @@ export function Header() {
                   className={cn(
                     "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                     isActive
-                      ? "bg-violet-500/10 text-violet-300"
+                      ? "bg-emerald-500/10 text-emerald-300"
                       : "text-zinc-400 hover:text-white hover:bg-zinc-800/50",
                   )}
                 >
@@ -147,7 +147,7 @@ export function Header() {
             </Button>
           </SignInButton>
           <Link href="/pricing" className="hidden sm:block">
-            <Button className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-lg shadow-violet-600/25">
+            <Button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white border-0 shadow-lg shadow-emerald-600/25">
               Start Learning
             </Button>
           </Link>
@@ -182,7 +182,7 @@ export function Header() {
                       href={link.href}
                       className={cn(
                         "flex items-center gap-2 cursor-pointer",
-                        isActive ? "text-violet-300" : "text-zinc-300",
+                        isActive ? "text-emerald-300" : "text-zinc-300",
                       )}
                     >
                       <Icon className="w-4 h-4" />
@@ -197,7 +197,7 @@ export function Header() {
           <UserButton
             appearance={{
               elements: {
-                avatarBox: "w-9 h-9 ring-2 ring-violet-500/20",
+                avatarBox: "w-9 h-9 ring-2 ring-emerald-500/20",
               },
             }}
           />
@@ -211,7 +211,7 @@ function Logo() {
   return (
     <>
       <div className="relative">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:shadow-emerald-500/40 transition-shadow">
           <Code2 className="w-5 h-5 text-white" />
         </div>
         <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">

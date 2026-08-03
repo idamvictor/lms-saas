@@ -66,7 +66,7 @@ export function SortableLessonItem({
       <PlayCircle className="h-3.5 w-3.5 text-emerald-400" />
       <Link
         href={editUrl}
-        className="text-sm text-zinc-300 flex-1 hover:text-violet-400 hover:underline transition-colors flex items-center gap-1.5"
+        className="text-sm text-zinc-300 flex-1 hover:text-emerald-400 hover:underline transition-colors flex items-center gap-1.5"
       >
         {title}
         <ExternalLink className="h-3 w-3 opacity-50" />

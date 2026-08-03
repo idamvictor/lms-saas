@@ -114,7 +114,7 @@ function DecoratorButton({
       onClick={() => button.send({ type: "toggle" })}
       className={`h-8 w-8 p-0 ${
         isActive
-          ? "bg-violet-600 text-white hover:bg-violet-700"
+          ? "bg-emerald-600 text-white hover:bg-emerald-700"
           : "text-zinc-400 hover:text-white hover:bg-zinc-700"
       }`}
       title={schemaType.name}
@@ -138,7 +138,7 @@ function ListButton({ schemaType }: { schemaType: ToolbarListSchemaType }) {
       onClick={() => button.send({ type: "toggle" })}
       className={`h-8 w-8 p-0 ${
         isActive
-          ? "bg-violet-600 text-white hover:bg-violet-700"
+          ? "bg-emerald-600 text-white hover:bg-emerald-700"
           : "text-zinc-400 hover:text-white hover:bg-zinc-700"
       }`}
       title={schemaType.name}

@@ -236,7 +236,7 @@ function PortableTextInputField({
         >
           <EventListenerPlugin on={handleMutation} />
           <Toolbar onInsertImage={handleOpenImageModal} />
-          <div className="p-4 min-h-[200px] max-h-[500px] overflow-y-auto focus-within:ring-1 focus-within:ring-violet-500/50">
+          <div className="p-4 min-h-[200px] max-h-[500px] overflow-y-auto focus-within:ring-1 focus-within:ring-emerald-500/50">
             <PortableTextEditable
               className="outline-none prose prose-invert max-w-none"
               renderStyle={renderStyle}
@@ -291,7 +291,7 @@ function PortableTextInputField({
               >
                 {isUploading ? (
                   <>
-                    <Loader2 className="h-10 w-10 mx-auto mb-2 animate-spin text-violet-500" />
+                    <Loader2 className="h-10 w-10 mx-auto mb-2 animate-spin text-emerald-500" />
                     <p className="text-sm text-zinc-400">Uploading...</p>
                   </>
                 ) : (
@@ -355,7 +355,7 @@ function PortableTextInputField({
                   <Button
                     type="button"
                     onClick={handleInsertImage}
-                    className="flex-1 bg-violet-600 hover:bg-violet-700 text-white"
+                    className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white"
                   >
                     Insert Image
                   </Button>

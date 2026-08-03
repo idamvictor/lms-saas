@@ -78,7 +78,7 @@ const STAT_CARDS = [
     icon: BookOpen,
     documentType: "course",
     href: "/admin/courses",
-    gradient: "from-violet-500 to-fuchsia-600",
+    gradient: "from-emerald-500 to-teal-600",
     iconColor: "text-white",
   },
   {
@@ -134,12 +134,12 @@ function QuickActionLink({
           <Icon className="h-4 w-4 text-white" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-white group-hover:text-violet-300 transition-colors">
+          <p className="text-sm font-medium text-white group-hover:text-emerald-300 transition-colors">
             {title}
           </p>
           <p className="text-xs text-zinc-500 truncate">{description}</p>
         </div>
-        <Plus className="h-4 w-4 text-zinc-600 group-hover:text-violet-400 transition-colors" />
+        <Plus className="h-4 w-4 text-zinc-600 group-hover:text-emerald-400 transition-colors" />
       </div>
     </Link>
   );
@@ -271,7 +271,7 @@ export default function AdminDashboard() {
               description="View and edit courses"
               icon={BookOpen}
               href="/admin/courses"
-              gradient="from-violet-500 to-fuchsia-600"
+              gradient="from-emerald-500 to-teal-600"
             />
             <QuickActionLink
               title="Manage Modules"
@@ -324,9 +324,9 @@ export default function AdminDashboard() {
       </div>
 
       {/* Tips Section */}
-      <div className="rounded-xl bg-linear-to-br from-violet-600/10 via-fuchsia-600/5 to-cyan-600/10 border border-violet-500/20 p-6">
+      <div className="rounded-xl bg-linear-to-br from-emerald-600/10 via-teal-600/5 to-cyan-600/10 border border-emerald-500/20 p-6">
         <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-violet-500 to-fuchsia-600 shadow-lg shrink-0">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-emerald-500 to-teal-600 shadow-lg shrink-0">
             <Sparkles className="h-5 w-5 text-white" />
           </div>
           <div>
@@ -335,7 +335,7 @@ export default function AdminDashboard() {
             </h3>
             <ul className="space-y-2 text-sm text-zinc-400">
               <li className="flex items-start gap-2">
-                <span className="text-violet-400">•</span>
+                <span className="text-emerald-400">•</span>
                 <span>
                   Start by creating{" "}
                   <strong className="text-zinc-300">Categories</strong> to
@@ -343,7 +343,7 @@ export default function AdminDashboard() {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-violet-400">•</span>
+                <span className="text-emerald-400">•</span>
                 <span>
                   Build <strong className="text-zinc-300">Lessons</strong>{" "}
                   first, then group them into{" "}
@@ -351,7 +351,7 @@ export default function AdminDashboard() {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-violet-400">•</span>
+                <span className="text-emerald-400">•</span>
                 <span>
                   Finally, create a{" "}
                   <strong className="text-zinc-300">Course</strong> and add your
@@ -359,7 +359,7 @@ export default function AdminDashboard() {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-violet-400">•</span>
+                <span className="text-emerald-400">•</span>
                 <span>
                   Use the <strong className="text-zinc-300">tier system</strong>{" "}
                   (Free, Pro, Ultra) to control access

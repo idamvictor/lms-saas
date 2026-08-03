@@ -207,7 +207,7 @@ function ModuleAccordionInputField({
             onClick={handleAddModule}
             disabled={!selectedModuleToAdd}
             size="icon"
-            className="bg-violet-600 hover:bg-violet-500 text-white"
+            className="bg-emerald-600 hover:bg-emerald-500 text-white"
           >
             <Plus className="h-4 w-4" />
           </Button>

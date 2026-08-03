@@ -283,7 +283,7 @@ export function ModuleAccordionItemContent({
                 onClick={handleAddLesson}
                 disabled={!selectedLessonToAdd}
                 size="sm"
-                className="h-8 w-8 p-0 bg-violet-600 hover:bg-violet-500 text-white"
+                className="h-8 w-8 p-0 bg-emerald-600 hover:bg-emerald-500 text-white"
               >
                 <Plus className="h-3.5 w-3.5" />
               </Button>
